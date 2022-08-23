@@ -34,7 +34,7 @@ describe('Hooks', () => {
   })
 
   context('Only - Execute somente...', () => {
-    it.only('Apenas o Teste 1 será executado', () => {
+    it('Apenas o Teste 1 será executado', () => {
       cy.log("Executando o teste 1...")
     })
 
