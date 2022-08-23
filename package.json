@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cypress:run": "npx cypress run",
+    "postcypress:run": "node cucumber-html-reporter.js"
   },
   "repository": {
     "type": "git",
@@ -18,11 +19,18 @@
   },
   "homepage": "https://github.com/Thairam/treinamento-cypress-web#readme",
   "devDependencies": {
+    "cucumber-html-reporter": "^5.5.0",
     "cypress": "^9.5.0",
     "cypress-cucumber-preprocessor": "^4.3.1",
     "cypress-file-upload": "^5.0.8"
   },
   "cypress-cucumber-preprocessor": {
-    "step_definitions": "cypress/steps"
+    "step_definitions": "cypress/steps",
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "cypress/cucumber-json",
+      "filePrefix": "",
+      "fileSuffix": ".json"
+    }
   }
 }
