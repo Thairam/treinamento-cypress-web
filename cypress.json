@@ -1,4 +1,5 @@
 {
-  "baseUrl": "https://demoqa.com/",
-  "testFiles": "**/*.{feature,features}"
+  "baseUrl": "https://www.saucedemo.com",
+  "testFiles": "**/*.{feature,features}",
+  "chromeWebSecurity": false
 }

@@ -7,4 +7,4 @@ Funcionalidade: Login
     Quando informo credenciais inválidas
       | Username | Password  |
       | username | wrongpass |
-    Entao devo visualizar a mensagem "Invalid username or password!"
+    Entao devo visualizar a mensagem "Username and password do not match any user in this service"

@@ -1,7 +1,7 @@
 export default new class LoginElements {
-  iptUsername = () => '#userName'
+  iptUsername = () => '[data-test=username]'
   
-  iptPassword = () => '#password'
+  iptPassword = () => '[data-test=password]'
   
-  btnLogin = () => '#login'
+  btnLogin = () => '[data-test=login-button]'
 }
