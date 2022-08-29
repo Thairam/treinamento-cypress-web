@@ -1,18 +1,19 @@
-const reporter = require("cucumber-html-reporter")
+const report = require("multiple-cucumber-html-reporter")
 
-var options = {
-  theme: 'bootstrap',
-  jsonFile: 'cypress/cucumber-json/',
-  output: "cypress/reports/report.html",
-  reportSuiteAsScenarios: true,
-  scenarioTimestamp: true,
-  launchReport: false,
+report.generate({
+  jsonDir: "cypress/cucumber-json",
+  reportPath: "cypress/reports/cucumber",
+  storeScreenshots: true,
+  noInlineScreenshots: true,
   metadata: {
-    "Test Environment": "LOCAL",
-    "Browser": "Chrome ",
-    "Platform": "Windows 10",
-    "Executed": "Local"
-  }
-}
-
-reporter.generate(options)
+    browser: {
+      name: "chrome",
+      version: "97",
+    },
+    device: "Local test machine",
+    platform: {
+      name: "windows",
+      version: "10",
+    },
+  },
+})
