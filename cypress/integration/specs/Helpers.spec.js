@@ -42,7 +42,7 @@ describe('Helpers mais comuns', () => {
       .should('eq', 'off')
   })
 
-  it('Intercept - Tardio', () => {
+  it('Intercept - Tardio (Teste deve falhar)', () => {
     cy.visit('/books')
     cy.intercept({ method: 'GET', url: 'https://demoqa.com/BookStore/v1/Books' }).as('getBooks')
 

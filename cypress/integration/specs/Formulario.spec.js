@@ -1,5 +1,6 @@
 describe('Formulário', () => {
   it('Preencher todos os dados do formulário e Enviar', () => {
+    cy.viewport(1900, 1080)
     cy.visit('/automation-practice-form')
     cy.get('#firstName').type('João')
     cy.get('#lastName').type('Silva')

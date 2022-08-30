@@ -79,7 +79,7 @@ describe('Sincronismo', () => {
       })
   })
 
-  it('Should vs Then - Retornos', () => {
+  it('Should vs Then - Retornos (Teste deve falhar)', () => {
     cy.visit('/dynamic-properties')
 
     cy.get('#visibleAfter')
@@ -98,7 +98,7 @@ describe('Sincronismo', () => {
       .and('to.deep.equal', { QA: 'Thairam' })
   })
 
-  it('Should vs Then - Buscar outro elemento', () => {
+  it.skip('Should vs Then - Buscar outro elemento (Causa loop infinito)', () => {
     cy.visit('/dynamic-properties')
 
     cy.get('#visibleAfter')
