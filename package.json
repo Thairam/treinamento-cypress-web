@@ -1,0 +1,36 @@
+{
+  "name": "treinamento-cypress-web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cypress:run": "npx cypress run",
+    "postcypress:run": "node cucumber-html-reporter.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Thairam/treinamento-cypress-web.git"
+  },
+  "keywords": [],
+  "author": "Thairam Michel Santos Ataíde",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Thairam/treinamento-cypress-web/issues"
+  },
+  "homepage": "https://github.com/Thairam/treinamento-cypress-web#readme",
+  "devDependencies": {
+    "cypress": "^9.5.0",
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "cypress-file-upload": "^5.0.8",
+    "multiple-cucumber-html-reporter": "^2.0.0"
+  },
+  "cypress-cucumber-preprocessor": {
+    "step_definitions": "cypress/steps",
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "cypress/cucumber-json",
+      "filePrefix": "",
+      "fileSuffix": ".json"
+    }
+  }
+}
