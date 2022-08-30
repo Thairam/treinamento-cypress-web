@@ -8,10 +8,16 @@
     "postcypress:run": "node cucumber-html-reporter.js"
   },
   "repository": {
-    "type": "git"
+    "type": "git",
+    "url": "git+https://github.com/Thairam/treinamento-cypress-web.git"
   },
   "keywords": [],
+  "author": "Thairam Michel Santos Ataíde",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Thairam/treinamento-cypress-web/issues"
+  },
+  "homepage": "https://github.com/Thairam/treinamento-cypress-web#readme",
   "devDependencies": {
     "cypress": "^9.5.0",
     "cypress-cucumber-preprocessor": "^4.3.1",
