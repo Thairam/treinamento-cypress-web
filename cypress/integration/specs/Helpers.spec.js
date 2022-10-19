@@ -6,7 +6,7 @@ describe('Helpers mais comuns', () => {
     cy.wrap(obj).should('have.property', 'curso', 'Cypress')
     cy.visit('/text-box')
     cy.get('#userName').then($iptName => {
-      // $iptName.type('Nome')
+      // $iptName.type('Nome') //!A função type não está disponível para o elemento HTML.
       cy.wrap($iptName).type('Nome')
     })
   })
@@ -36,16 +36,21 @@ describe('Helpers mais comuns', () => {
     const soma = (x, y) => x + y
     cy.wrap({ op: soma }).invoke('op', 2, 3).should('eq', 5)
 
-    cy.visit('/text-box')
-    cy.get('#userName')
-      .invoke('attr', 'autocomplete')
-      .should('eq', 'off')
+    cy.visit('/links')
+    cy.get('#simpleLink')
+      .should('attr', 'target')
+
+    cy.get('#simpleLink')
+      .invoke('removeAttr', 'target') //* https://api.jquery.com/removeattr/
+      .should('not.have.attr', 'target')
   })
 
   it('Intercept - Tardio (Teste deve falhar)', () => {
     cy.visit('/books')
     cy.intercept({ method: 'GET', url: 'https://demoqa.com/BookStore/v1/Books' }).as('getBooks')
 
+    //! [FALHA]: A requisição ocorreu assim que a página foi carregada.
+    //? [PERGUNTA]: Como podemos corrigir este cenário?
     cy.wait('@getBooks')
       .its('response.statusCode')
       .should('eq', 200)

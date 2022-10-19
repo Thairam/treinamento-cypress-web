@@ -14,4 +14,6 @@ describe('Interagindo com capos de data', () => {
       .clear()
       .type('October 25, 1994 3:15 PM{enter}')
   })
+  
+  //?[PERGUNTA]: O que podemos melhorar nesses 2 cenários para que nosso código fique mais "limpo"?
 })

@@ -2,7 +2,7 @@ import { join } from 'path'
 
 describe('Upload e Download de arquivos', () => {
   it('Upload de arquivo', () => {
-    //https://www.npmjs.com/package/cypress-file-upload
+    //*[INSTALAR DEPENDÊNCIA] https://www.npmjs.com/package/cypress-file-upload
     cy.visit('/upload-download')
 
     cy.get('#uploadFile')
@@ -20,5 +20,7 @@ describe('Upload e Download de arquivos', () => {
 
     cy.readFile(dirArquivoBaixado)
       .should('exist')
+
+    //?[PERGUNTA]: Porque esté cenário não está bem escrito, e o que podemos melhorar nele?
   })
 })

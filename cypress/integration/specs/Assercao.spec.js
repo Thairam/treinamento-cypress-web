@@ -11,7 +11,7 @@ describe('Asserção', () => {
         .find('.rt-td')
         .first()
         .should('contain', 'Cierra')
-        .should('have.html', 'Cierra')
+        .should('have.text', 'Cierra')
         .should('match', 'div')
     })
 
