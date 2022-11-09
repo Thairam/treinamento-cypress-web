@@ -1,4 +1,9 @@
 {
-  "baseUrl": "https://demoqa.com/",
-  "chromeWebSecurity": false
+  "baseUrl": "https://www.saucedemo.com",
+  "testFiles": "**/*.{feature,features}",
+  "chromeWebSecurity": false,
+  "env": {
+    "username": "standard_user",
+    "password": "secret_sauce"
+  }
 }
