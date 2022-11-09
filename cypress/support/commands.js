@@ -1,4 +1,5 @@
 import 'cypress-file-upload'
+import LoginPage from "../pages/LoginPage"
 
 Cypress.on('uncaught:exception', (err, runnable) => {
   return false
@@ -18,4 +19,10 @@ Cypress.Commands.add('validarPesquisaDeLivro', (titulo, autor, editora) => {
 
   cy.get(obterSeletorTD(3))
     .should('have.text', editora)
+})
+
+Cypress.Commands.add('login', () => {
+  LoginPage.acessarPaginaDeLogin()
+  LoginPage.loginComCredenciaisValidas()
+  LoginPage.validarLoginComSucesso()
 })

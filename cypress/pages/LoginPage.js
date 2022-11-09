@@ -2,7 +2,7 @@ import LoginElements from "./Elements/LoginElements"
 
 export default new class LoginPage {
   acessarPaginaDeLogin() {
-    cy.visit('login')
+    cy.visit('/')
   }
 
   loginComCredenciaisInvalidas(username, password) {
@@ -14,5 +14,20 @@ export default new class LoginPage {
 
     cy.get(LoginElements.btnLogin())
       .click()
+  }
+
+  loginComCredenciaisValidas() {
+    cy.get(LoginElements.iptUsername())
+      .type(Cypress.env('username'))
+
+    cy.get(LoginElements.iptPassword())
+      .type(Cypress.env('password'))
+
+    cy.get(LoginElements.btnLogin())
+      .click()
+  }
+
+  validarLoginComSucesso() {
+    cy.url().should('equal', Cypress.config().baseUrl.concat('/inventory.html'))
   }
 }
